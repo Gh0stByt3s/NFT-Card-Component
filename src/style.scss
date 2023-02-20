@@ -1,0 +1,151 @@
+// Colors
+$primary-soft-blue: hsl(215, 51%, 70%);
+$primary-cyan: hsl(178, 100%, 50%);
+
+$neutral-main-bg: hsl(217, 54%, 11%);
+$neutral-card-bg: hsl(216, 50%, 16%);
+$neutral-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Outfit";
+  background-color: $neutral-main-bg;
+  color: $primary-soft-blue;
+  position: relative;
+}
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-wrapper {
+  max-width: 1440px;
+  background-color: $neutral-main-bg;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: $neutral-card-bg;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+  &__image {
+    position: relative;
+    background-color: $primary-cyan;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    &:hover {
+      img {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+      .icon-view {
+        opacity: 1;
+      }
+    }
+
+    .icon-view {
+      position: absolute;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  header {
+    padding: 1em 0;
+
+    .card__title {
+      color: $white;
+      font-size: 1.3rem;
+      font-weight: 600;
+
+      &:hover {
+        color: $primary-cyan;
+      }
+    }
+  }
+  &__text {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  &__info-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 1.5em 0;
+    border-bottom: 1px solid $neutral-line;
+
+    .stat {
+      color: $primary-cyan;
+    }
+  }
+
+  &__footer {
+    padding: 1em 0;
+    gap: 1em;
+    .card__avatar {
+      width: 10%;
+      border-radius: 50%;
+      border: 1px solid $white;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .card__author {
+      color: $white;
+
+      &:hover {
+        color: $primary-cyan;
+      }
+    }
+  }
+}
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  color: $white;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
